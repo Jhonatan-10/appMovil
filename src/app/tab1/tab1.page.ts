@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 export class Tab1Page {
   dado1 = 0;
   dado2 = 0;
+  dado3 = 0;
+  dado4 = 0;
   suma = 0;
-  eleccion = '';
+  
   resultado: string;
 
 
@@ -17,24 +19,25 @@ export class Tab1Page {
 
   calcularSuma() {
 
-    this.dado1 = Math.floor(Math.random() * 6) + 1;
-    this.dado2 = Math.floor(Math.random() * 6) + 1;
+    this.dado1 = Math.floor(Math.random() * 3) + 1;
+    this.dado2 = Math.floor(Math.random() * 3) + 1;
+    this.dado3 = Math.floor(Math.random() * 3) + 1;
+    this.dado4 = Math.floor(Math.random() * 3) + 1;
 
-    this.suma = this.dado1 + this.dado2;
-    if (this.suma >= 2 && this.suma <= 6) {
-      this.resultado = 'menor';
+    this.suma = this.dado1 + this.dado2 + this.dado3 + this.dado4;
+    if (this.suma === 12) {
+      this.resultado = "12";
     }
-    else if (this.suma > 7) {
-      this.resultado = 'mayor';
+    else if (this.suma === 8) {
+      this.resultado = "8";
     }
-    else if (this.suma === 7) {
-      this.resultado = 'casa';
+    else if (this.suma === 4) {
+      this.resultado = "4";
     }
-    // En php: $this->suma = $this->dado1 + $this->dado2
+    
+    
   }
 
-  elegirOpcion(opcion: string) {
-    this.eleccion = opcion;
-  }
+  
 
 }
